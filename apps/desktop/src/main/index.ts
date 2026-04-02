@@ -59,9 +59,8 @@ function getCourseDir(courseName: string): string {
 function extractFilename(url: string, id: string, fallback: string): string {
   try {
     const pathname = new URL(url).pathname
-    let base = pathname.split("/").pop() || fallback
+    let base = decodeURIComponent(pathname.split("/").pop() || fallback)
     if (!base.endsWith(".pdf")) base = `${base}.pdf`
-    // 用 id 前缀确保唯一
     return `${id}-${base}`
   } catch {
     return `${id}-${fallback}`
