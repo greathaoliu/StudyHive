@@ -1,0 +1,984 @@
+[
+  {
+    "id": "pku-cs-2024",
+    "name": "计算机科学与技术 2024 培养方案",
+    "school": "北京大学",
+    "uploadedAt": "2026-03-30",
+    "courses": [
+      {
+        "id": "c1",
+        "name": "数据结构",
+        "category": "专业核心课",
+        "semester": "大二上",
+        "credits": 4,
+        "knowledgePoints": [
+          "二叉树",
+          "图论",
+          "排序算法",
+          "哈希表",
+          "红黑树",
+          "B+树"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c2",
+        "name": "操作系统",
+        "category": "专业核心课",
+        "semester": "大二下",
+        "credits": 4,
+        "knowledgePoints": [
+          "进程管理",
+          "内存管理",
+          "文件系统",
+          "死锁",
+          "调度算法"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c3",
+        "name": "计算机网络",
+        "category": "专业核心课",
+        "semester": "大三上",
+        "credits": 3,
+        "knowledgePoints": [
+          "TCP/IP",
+          "HTTP",
+          "路由算法",
+          "DNS",
+          "Socket编程"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c4",
+        "name": "算法设计与分析",
+        "category": "专业核心课",
+        "semester": "大二下",
+        "credits": 3,
+        "knowledgePoints": [
+          "动态规划",
+          "贪心算法",
+          "分治法",
+          "图算法",
+          "NP完全"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c5",
+        "name": "编译原理",
+        "category": "专业核心课",
+        "semester": "大三上",
+        "credits": 3,
+        "knowledgePoints": [
+          "词法分析",
+          "语法分析",
+          "语义分析",
+          "代码生成",
+          "LL/LR分析"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c6",
+        "name": "数据库系统",
+        "category": "专业核心课",
+        "semester": "大三上",
+        "credits": 3,
+        "knowledgePoints": [
+          "SQL",
+          "关系代数",
+          "事务",
+          "索引",
+          "范式"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c7",
+        "name": "计算机组成原理",
+        "category": "专业核心课",
+        "semester": "大二上",
+        "credits": 4,
+        "knowledgePoints": [
+          "指令集",
+          "流水线",
+          "Cache",
+          "中断",
+          "总线"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c8",
+        "name": "高等数学",
+        "category": "公共基础课",
+        "semester": "大一上/下",
+        "credits": 6,
+        "knowledgePoints": [
+          "微积分",
+          "定积分",
+          "级数",
+          "多元函数",
+          "微分方程"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c9",
+        "name": "线性代数",
+        "category": "公共基础课",
+        "semester": "大一上",
+        "credits": 3,
+        "knowledgePoints": [
+          "矩阵运算",
+          "行列式",
+          "特征值",
+          "向量空间",
+          "SVD"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c10",
+        "name": "概率论与数理统计",
+        "category": "公共基础课",
+        "semester": "大一下",
+        "credits": 3,
+        "knowledgePoints": [
+          "概率分布",
+          "期望方差",
+          "假设检验",
+          "贝叶斯",
+          "回归分析"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c11",
+        "name": "离散数学",
+        "category": "公共基础课",
+        "semester": "大一上",
+        "credits": 3,
+        "knowledgePoints": [
+          "集合论",
+          "图论",
+          "逻辑推理",
+          "代数结构",
+          "组合数学"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c12",
+        "name": "人工智能",
+        "category": "专业选修课",
+        "semester": "大三下",
+        "credits": 3,
+        "knowledgePoints": [
+          "搜索算法",
+          "机器学习",
+          "神经网络",
+          "NLP",
+          "计算机视觉"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c13",
+        "name": "软件工程",
+        "category": "专业选修课",
+        "semester": "大三下",
+        "credits": 3,
+        "knowledgePoints": [
+          "需求分析",
+          "设计模式",
+          "敏捷开发",
+          "测试",
+          "CI/CD"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c14",
+        "name": "大学英语",
+        "category": "通识课",
+        "semester": "大一~大二",
+        "credits": 8,
+        "knowledgePoints": [
+          "阅读",
+          "写作",
+          "听力",
+          "口语"
+        ],
+        "archived": false
+      }
+    ]
+  },
+  {
+    "id": "program-1775134095283",
+    "name": "计算机科学与技术（图灵班） 2024 培养方案",
+    "school": "浙江大学",
+    "filePath": "/Users/haoliu/Desktop/workplace/StudyHive/浙大计算机培养方案.pdf",
+    "courses": [
+      {
+        "id": "c1",
+        "name": "形势与政策",
+        "category": "公共基础课",
+        "semester": "大一上",
+        "credits": 2,
+        "knowledgePoints": [
+          "国内国际形势分析",
+          "国家宏观政策解读",
+          "时事热点评析",
+          "社会思潮辨析",
+          "就业政策与形势",
+          "当代世界经济与政治",
+          "区域协调发展",
+          "国家重大战略"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c2",
+        "name": "思想道德与法治",
+        "category": "公共基础课",
+        "semester": "大一上",
+        "credits": 3,
+        "knowledgePoints": [
+          "马克思主义人生观",
+          "理想信念教育",
+          "中国精神",
+          "道德与法律基础"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c3",
+        "name": "中国近现代史纲要",
+        "category": "公共基础课",
+        "semester": "大一上",
+        "credits": 3,
+        "knowledgePoints": [
+          "近代中国反侵略斗争",
+          "辛亥革命与君主专制终结",
+          "中国共产党成立",
+          "抗日战争与解放战争"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c4",
+        "name": "马克思主义基本原理",
+        "category": "公共基础课",
+        "semester": "大二上",
+        "credits": 3,
+        "knowledgePoints": [
+          "马克思主义哲学",
+          "政治经济学",
+          "科学社会主义",
+          "唯物史观与辩证法"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c8",
+        "name": "军训",
+        "category": "公共基础课",
+        "semester": "大一上",
+        "credits": 2,
+        "knowledgePoints": [
+          "基本军事技能",
+          "队列训练",
+          "国防教育",
+          "内务与纪律"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c9",
+        "name": "军事理论",
+        "category": "公共基础课",
+        "semester": "大二",
+        "credits": 2,
+        "knowledgePoints": [
+          "中国国防",
+          "军事思想",
+          "国际战略环境",
+          "军事高技术"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c10",
+        "name": "体测与锻炼",
+        "category": "公共基础课",
+        "semester": "大四",
+        "credits": 1,
+        "knowledgePoints": [
+          "体质测试标准",
+          "有氧耐力训练",
+          "力量训练",
+          "体育锻炼习惯养成"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c11",
+        "name": "英语水平测试",
+        "category": "公共基础课",
+        "semester": "大一",
+        "credits": 1,
+        "knowledgePoints": [
+          "学术英语阅读",
+          "英语听力理解",
+          "英语写作表达",
+          "翻译与跨文化交际"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c12",
+        "name": "中国改革开放史",
+        "category": "通识课",
+        "semester": "大二",
+        "credits": 1.5,
+        "knowledgePoints": [
+          "改革开放历史背景",
+          "经济特区建设",
+          "社会主义市场经济",
+          "全面深化改革"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c13",
+        "name": "新中国史",
+        "category": "通识课",
+        "semester": "大二",
+        "credits": 1.5,
+        "knowledgePoints": [
+          "新中国成立与巩固",
+          "社会主义建设探索",
+          "改革开放新时期",
+          "中国特色社会主义进入新时代"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c14",
+        "name": "中国共产党历史",
+        "category": "通识课",
+        "semester": "大二",
+        "credits": 1.5,
+        "knowledgePoints": [
+          "建党与大革命时期",
+          "土地革命与抗日战争",
+          "解放战争与建国",
+          "社会主义建设与发展"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c15",
+        "name": "社会主义发展史",
+        "category": "通识课",
+        "semester": "大二",
+        "credits": 1.5,
+        "knowledgePoints": [
+          "空想社会主义",
+          "科学社会主义的创立",
+          "苏联模式及其演变",
+          "中国特色社会主义道路"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c16",
+        "name": "数学分析",
+        "category": "专业核心课",
+        "semester": "大一上",
+        "credits": 11,
+        "knowledgePoints": [
+          "极限与连续",
+          "一元函数微分学",
+          "一元函数积分学",
+          "实数完备性",
+          "多元函数微分学",
+          "重积分",
+          "曲线积分与曲面积分",
+          "级数理论"
+        ],
+        "archived": false,
+        "aliases": [
+          "微积分"
+        ]
+      },
+      {
+        "id": "c17",
+        "name": "线性代数",
+        "category": "专业核心课",
+        "semester": "大一上",
+        "credits": 6.5,
+        "knowledgePoints": [
+          "线性方程组与矩阵",
+          "行列式",
+          "向量空间",
+          "特征值与特征向量",
+          "抽象代数基础",
+          "线性空间与线性变换",
+          "欧几里得空间",
+          "二次型"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c20",
+        "name": "普通物理学",
+        "category": "公共基础课",
+        "semester": "大一下",
+        "credits": 8,
+        "knowledgePoints": [
+          "经典力学",
+          "热学",
+          "相对论基础",
+          "机械振动与机械波",
+          "电磁学",
+          "光学",
+          "量子物理基础",
+          "近代物理前沿"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c21",
+        "name": "普通物理学实验",
+        "category": "公共基础课",
+        "semester": "大一下",
+        "credits": 1.5,
+        "knowledgePoints": [
+          "基础测量方法",
+          "数据处理与误差分析",
+          "力学与热学实验",
+          "光学实验基础"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c22",
+        "name": "概率论和数理统计",
+        "category": "公共基础课",
+        "semester": "大二上",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "概率论公理与随机变量",
+          "多维随机变量及分布",
+          "参数估计",
+          "假设检验"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c24",
+        "name": "程序设计",
+        "category": "专业核心课",
+        "semester": "大一上",
+        "credits": 4,
+        "knowledgePoints": [
+          "C/C++程序设计基础",
+          "程序控制结构",
+          "函数与数组",
+          "基础算法设计"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c25",
+        "name": "数据结构",
+        "category": "专业核心课",
+        "semester": "大一下",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "线性表",
+          "栈和队列",
+          "树与二叉树",
+          "图论基础"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c26",
+        "name": "离散数学",
+        "category": "专业核心课",
+        "semester": "大一下",
+        "credits": 4,
+        "knowledgePoints": [
+          "数理逻辑",
+          "集合论",
+          "代数系统",
+          "图论"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c27",
+        "name": "计算机系统",
+        "category": "专业核心课",
+        "semester": "大一下",
+        "credits": 16.5,
+        "knowledgePoints": [
+          "数据的机器级表示",
+          "程序的机器级表示",
+          "处理器体系结构",
+          "存储器层次结构",
+          "进程与并发控制",
+          "虚拟内存管理",
+          "文件系统",
+          "系统调用与接口",
+          "网络编程与协议",
+          "并发与同步机制",
+          "分布式系统基础",
+          "系统性能优化"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c28",
+        "name": "汇编语言",
+        "category": "专业选修课",
+        "semester": "大一下",
+        "credits": 2,
+        "knowledgePoints": [
+          "指令系统架构",
+          "汇编语言语法",
+          "子程序与中断",
+          "底层硬件交互编程"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c29",
+        "name": "网络空间安全",
+        "category": "专业选修课",
+        "semester": "大一下",
+        "credits": 1.5,
+        "knowledgePoints": [
+          "信息安全基础",
+          "网络威胁与攻击技术",
+          "密码学初步",
+          "安全防护体系"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c30",
+        "name": "高级数据结构与算法分析",
+        "category": "专业核心课",
+        "semester": "大二上",
+        "credits": 4,
+        "knowledgePoints": [
+          "高级树结构",
+          "高级图论算法",
+          "动态规划与贪心算法",
+          "算法复杂度分析"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c32",
+        "name": "人工智能",
+        "category": "专业核心课",
+        "semester": "大二上",
+        "credits": 3.5,
+        "knowledgePoints": [
+          "搜索与问题求解",
+          "知识表示与推理",
+          "机器学习基础",
+          "自然语言处理与计算机视觉初步"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c33",
+        "name": "面向对象程序设计",
+        "category": "专业核心课",
+        "semester": "大二下",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "封装、继承与多态",
+          "面向对象设计原则",
+          "设计模式基础",
+          "异常处理与集合框架"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c35",
+        "name": "数据库系统",
+        "category": "专业核心课",
+        "semester": "大二下",
+        "credits": 4,
+        "knowledgePoints": [
+          "关系代数与SQL",
+          "数据库设计范式",
+          "查询优化与索引",
+          "事务管理与并发控制"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c36",
+        "name": "数值分析",
+        "category": "专业选修课",
+        "semester": "大二上",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "插值与拟合",
+          "数值积分与微分",
+          "线性方程组的数值解法",
+          "非线性方程求根"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c37",
+        "name": "图像信息处理",
+        "category": "专业选修课",
+        "semester": "大二上",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "图像增强与复原",
+          "图像分割",
+          "特征提取",
+          "图像频域变换"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c38",
+        "name": "深度学习",
+        "category": "专业选修课",
+        "semester": "大二下",
+        "credits": 3.5,
+        "knowledgePoints": [
+          "神经网络基础",
+          "卷积神经网络(CNN)",
+          "循环神经网络(RNN)",
+          "深度学习框架实践"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c39",
+        "name": "数据可视化",
+        "category": "专业选修课",
+        "semester": "大二下",
+        "credits": 2,
+        "knowledgePoints": [
+          "可视化设计原则",
+          "数据映射与视觉编码",
+          "交互式可视化技术",
+          "可视化工具与应用"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c40",
+        "name": "数据挖掘",
+        "category": "专业选修课",
+        "semester": "大二下",
+        "credits": 2,
+        "knowledgePoints": [
+          "数据预处理",
+          "分类与预测算法",
+          "聚类分析",
+          "关联规则挖掘"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c41",
+        "name": "计算机网络",
+        "category": "专业核心课",
+        "semester": "大三上",
+        "credits": 4.5,
+        "knowledgePoints": [
+          "TCP/IP协议栈",
+          "路由与交换机制",
+          "传输层控制",
+          "应用层网络服务"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c42",
+        "name": "理论计算机科学",
+        "category": "专业核心课",
+        "semester": "大三上",
+        "credits": 2,
+        "knowledgePoints": [
+          "有限状态自动机",
+          "上下文无关文法",
+          "图灵机",
+          "可计算性与计算复杂性"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c43",
+        "name": "编译原理",
+        "category": "专业核心课",
+        "semester": "大三下",
+        "credits": 4,
+        "knowledgePoints": [
+          "词法分析",
+          "语法分析",
+          "语义分析",
+          "目标代码生成与优化"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c44",
+        "name": "计算机动画",
+        "category": "专业选修课",
+        "semester": "大三上",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "运动学建模与动画",
+          "物理模拟动画",
+          "角色动画与骨骼绑定",
+          "动画渲染技术"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c45",
+        "name": "计算机图形学",
+        "category": "专业选修课",
+        "semester": "大三上",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "三维几何建模",
+          "图形变换与观察",
+          "真实感图形渲染",
+          "着色器编程"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c47",
+        "name": "量子计算理论基础与软件系统",
+        "category": "专业选修课",
+        "semester": "大三上",
+        "credits": 3,
+        "knowledgePoints": [
+          "量子比特与量子态",
+          "量子逻辑门与线路",
+          "量子算法",
+          "量子编程框架实践"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c48",
+        "name": "数字视音频处理",
+        "category": "专业选修课",
+        "semester": "大三上",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "音视频信号数字化",
+          "音视频编解码标准",
+          "频域变换与滤波",
+          "多媒体系统应用"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c49",
+        "name": "算法设计与分析",
+        "category": "专业选修课",
+        "semester": "大三上",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "分治策略",
+          "动态规划",
+          "图算法",
+          "NP完全性理论"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c50",
+        "name": "专题研讨",
+        "category": "专业选修课",
+        "semester": "大三上",
+        "credits": 2,
+        "knowledgePoints": [
+          "前沿文献研讨",
+          "学术报告撰写",
+          "批判性思维交流",
+          "跨学科技术探讨"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c51",
+        "name": "机器学习",
+        "category": "专业选修课",
+        "semester": "大三上",
+        "credits": 2,
+        "knowledgePoints": [
+          "监督学习",
+          "无监督学习",
+          "强化学习基础",
+          "模型评估与选择"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c52",
+        "name": "物联网技术与应用开发",
+        "category": "专业选修课",
+        "semester": "大三上",
+        "credits": 2,
+        "knowledgePoints": [
+          "传感器与识别技术",
+          "物联网通信协议",
+          "边缘计算",
+          "物联网应用系统开发"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c53",
+        "name": "计算机视觉",
+        "category": "专业选修课",
+        "semester": "大三上",
+        "credits": 2,
+        "knowledgePoints": [
+          "图像特征提取与匹配",
+          "立体视觉与三维重建",
+          "目标检测与识别",
+          "深度学习在视觉中的应用"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c54",
+        "name": "大数据存储与计算技术",
+        "category": "专业选修课",
+        "semester": "大三下",
+        "credits": 2,
+        "knowledgePoints": [
+          "分布式文件系统",
+          "MapReduce计算模型",
+          "NoSQL数据库",
+          "大数据处理架构"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c55",
+        "name": "计算机图形学研究进展",
+        "category": "专业选修课",
+        "semester": "大三下",
+        "credits": 4,
+        "knowledgePoints": [
+          "高级真实感渲染技术",
+          "几何处理前沿",
+          "神经辐射场",
+          "图形学前沿论文研读"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c57",
+        "name": "计算机游戏程序设计",
+        "category": "专业选修课",
+        "semester": "大三下",
+        "credits": 2.5,
+        "knowledgePoints": [
+          "游戏引擎架构",
+          "物理引擎与碰撞检测",
+          "游戏AI设计",
+          "实时图形渲染优化"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c58",
+        "name": "技术沟通",
+        "category": "专业选修课",
+        "semester": "大三下",
+        "credits": 2,
+        "knowledgePoints": [
+          "科技论文写作规范",
+          "学术幻灯片制作",
+          "口头报告与演讲技巧",
+          "团队协作与沟通策略"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c59",
+        "name": "社交网络安全与隐私",
+        "category": "专业选修课",
+        "semester": "大三下",
+        "credits": 2,
+        "knowledgePoints": [
+          "社交网络结构分析",
+          "隐私泄露风险与防范",
+          "虚假信息检测",
+          "网络攻击防御策略"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c61",
+        "name": "计算机前沿技术讲座",
+        "category": "专业选修课",
+        "semester": "大四上",
+        "credits": 1,
+        "knowledgePoints": [
+          "计算机学术前沿动态",
+          "前沿技术应用前景",
+          "学科交叉融合趋势",
+          "顶尖学者研究经验"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c64",
+        "name": "图灵研讨班",
+        "category": "专业选修课",
+        "semester": "大四上",
+        "credits": 0.5,
+        "knowledgePoints": [
+          "图灵班专属研讨交流",
+          "学术热点与前沿思辨",
+          "学生学术成果分享",
+          "跨年级经验传承"
+        ],
+        "archived": false
+      },
+      {
+        "id": "c65",
+        "name": "虚拟现实与数字娱乐",
+        "category": "专业选修课",
+        "semester": "大四下",
+        "credits": 2,
+        "knowledgePoints": [
+          "VR/AR系统架构",
+          "全景视觉与渲染技术",
+          "人机交互设计",
+          "数字娱乐系统开发"
+        ],
+        "archived": false
+      }
+    ],
+    "uploadedAt": "2026-04-02"
+  }
+]
