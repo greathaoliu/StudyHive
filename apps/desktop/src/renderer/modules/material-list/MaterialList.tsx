@@ -173,12 +173,31 @@ export function MaterialList() {
 
   const [viewMode, setViewMode] = useState<ViewMode>("list")
   const [showArchived, setShowArchived] = useState(false)
+  const [activeSource, setActiveSource] = useState<string | null>(null)
+  const [activeKP, setActiveKP] = useState<string | null>(null)
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
+
+  const toggleCollapsed = (key: string) => {
+    setCollapsed((prev) => {
+      const next = new Set(prev)
+      next.has(key) ? next.delete(key) : next.add(key)
+      return next
+    })
+  }
 
   const courseFiltered = activeCourse
     ? materials.filter((m) => m.courseName === activeCourse && !m.archived)
     : materials.filter((m) => !m.archived)
-  const filtered = filter === "all" ? courseFiltered : courseFiltered.filter((m) => m.type === filter)
+  const typeFiltered = filter === "all" ? courseFiltered : courseFiltered.filter((m) => m.type === filter)
+  const sourceFiltered = activeSource ? typeFiltered.filter((m) => m.sourceName === activeSource) : typeFiltered
+  const filtered = activeKP
+    ? sourceFiltered.filter((m) => m.knowledgePoints?.includes(activeKP))
+    : sourceFiltered
   const archivedMaterials = materials.filter((m) => m.archived && (!activeCourse || m.courseName === activeCourse))
+
+  // Extract unique sources and knowledge points for tag filters
+  const allSources = [...new Set(typeFiltered.map((m) => m.sourceName))].sort()
+  const allKPs = [...new Set(typeFiltered.flatMap((m) => m.knowledgePoints || []))].sort()
 
   const headerTitle = activeCourse || "全部资料"
   const doneCount = courseFiltered.filter((m) => m.downloadStatus === "done").length
@@ -275,6 +294,38 @@ export function MaterialList() {
             </button>
           ))}
         </div>
+
+        {/* Source tag filters — only in source view */}
+        {viewMode === "source" && allSources.length >= 2 && (
+          <div className="mt-1.5 flex flex-wrap gap-1 items-center">
+            <span className="text-xs text-base-content/30 shrink-0">来源</span>
+            {allSources.map((s) => (
+              <button
+                key={s}
+                onClick={() => setActiveSource(activeSource === s ? null : s)}
+                className={`badge badge-xs cursor-pointer ${activeSource === s ? "badge-secondary" : "badge-outline opacity-60 hover:opacity-100"}`}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Knowledge point tag filters — only in knowledge view */}
+        {viewMode === "knowledge" && allKPs.length >= 2 && (
+          <div className="mt-1 flex flex-wrap gap-1 items-center">
+            <span className="text-xs text-base-content/30 shrink-0">知识点</span>
+            {allKPs.map((kp) => (
+              <button
+                key={kp}
+                onClick={() => setActiveKP(activeKP === kp ? null : kp)}
+                className={`badge badge-xs cursor-pointer ${activeKP === kp ? "badge-accent" : "badge-outline opacity-60 hover:opacity-100"}`}
+              >
+                {kp}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* List */}
@@ -293,11 +344,15 @@ export function MaterialList() {
 
         {viewMode === "source" && sourceGroups.map(({ name, items }) => (
           <div key={name}>
-            <div className="sticky top-0 z-10 bg-base-200/90 backdrop-blur px-3 py-1.5 border-b border-base-300">
+            <button
+              onClick={() => toggleCollapsed(`src:${name}`)}
+              className="sticky top-0 z-10 flex w-full items-center gap-1.5 bg-base-200/90 backdrop-blur px-3 py-1.5 border-b border-base-300 hover:bg-base-200 cursor-pointer"
+            >
+              <span className={`text-xs transition-transform ${collapsed.has(`src:${name}`) ? "" : "rotate-90"}`}>▶</span>
               <span className="text-xs font-semibold text-base-content/60">{name}</span>
-              <span className="ml-1 text-xs text-base-content/40">({items.length})</span>
-            </div>
-            {items.map((item) => (
+              <span className="text-xs text-base-content/40">({items.length})</span>
+            </button>
+            {!collapsed.has(`src:${name}`) && items.map((item) => (
               <MaterialCard
                 key={item.id}
                 item={item}
@@ -313,11 +368,15 @@ export function MaterialList() {
 
         {viewMode === "knowledge" && kpGroups.map(({ point, items }) => (
           <div key={point}>
-            <div className="sticky top-0 z-10 bg-base-200/90 backdrop-blur px-3 py-1.5 border-b border-base-300">
+            <button
+              onClick={() => toggleCollapsed(`kp:${point}`)}
+              className="sticky top-0 z-10 flex w-full items-center gap-1.5 bg-base-200/90 backdrop-blur px-3 py-1.5 border-b border-base-300 hover:bg-base-200 cursor-pointer"
+            >
+              <span className={`text-xs transition-transform ${collapsed.has(`kp:${point}`) ? "" : "rotate-90"}`}>▶</span>
               <span className="text-xs font-semibold text-primary/70">{point}</span>
-              <span className="ml-1 text-xs text-base-content/40">({items.length})</span>
-            </div>
-            {items.map((item) => (
+              <span className="text-xs text-base-content/40">({items.length})</span>
+            </button>
+            {!collapsed.has(`kp:${point}`) && items.map((item) => (
               <MaterialCard
                 key={item.id}
                 item={item}
