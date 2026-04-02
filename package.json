@@ -1,0 +1,22 @@
+{
+  "name": "studyhive",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A learning material collection app for university students",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "dev:desktop": "turbo dev --filter=@studyhive/desktop",
+    "build:desktop": "turbo build --filter=@studyhive/desktop"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.7",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.17.0",
+  "pnpm": {
+    "onlyBuiltDependencies": ["electron", "esbuild"]
+  }
+}

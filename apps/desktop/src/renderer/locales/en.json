@@ -1,0 +1,73 @@
+{
+  "app": {
+    "name": "StudyHive",
+    "version": "v0.1.0"
+  },
+  "sidebar": {
+    "search": "Search courses or materials...",
+    "myMajors": "My Majors",
+    "discover": "Discover",
+    "collection": "Collection",
+    "upload": "Upload",
+    "settings": "Settings",
+    "addMajor": "Add Major"
+  },
+  "materialList": {
+    "all": "All",
+    "courseware": "Courseware",
+    "video": "Video",
+    "exam": "Exam",
+    "notes": "Notes",
+    "link": "Link",
+    "crawl": "Crawled",
+    "uploadSource": "Uploaded"
+  },
+  "contentPanel": {
+    "selectMaterial": "Select a material to start reading",
+    "autoCollect": "Enter major and course name to auto-collect materials",
+    "uploadTip": "Or upload your own study materials",
+    "aiTip": "AI-powered classification and management"
+  },
+  "discover": {
+    "title": "Discover Study Materials",
+    "subtitle": "Enter major and course name to search global university materials",
+    "majorPlaceholder": "Major (e.g. Computer Science)",
+    "coursePlaceholder": "Course Name (e.g. Data Structures)",
+    "search": "Search"
+  },
+  "upload": {
+    "title": "Upload Materials",
+    "subtitle": "Upload your study materials, AI will auto-classify and manage",
+    "dragHere": "Drag files here, or click to select",
+    "supportedFormats": "Supports PDF, PPT, DOC, ZIP, etc.",
+    "selectFiles": "Select Files"
+  },
+  "settings": {
+    "title": "Settings",
+    "general": "General",
+    "ai": "AI Configuration",
+    "language": "Language",
+    "theme": "Theme",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "autoUpdate": "Auto-check for updates on startup",
+    "aiProvider": "AI Provider",
+    "aiProviderOpenai": "OpenAI Compatible",
+    "aiProviderClaude": "Claude",
+    "aiProviderCustom": "Custom",
+    "baseUrl": "Base URL",
+    "baseUrlPlaceholder": "https://api.openai.com/v1",
+    "baseUrlHint": "Supports OpenAI-compatible API endpoints",
+    "apiKey": "API Key",
+    "apiKeyPlaceholder": "sk-...",
+    "model": "Model",
+    "modelPlaceholder": "gpt-4o-mini",
+    "save": "Save Configuration",
+    "testConnection": "Test Connection"
+  },
+  "collection": {
+    "title": "My Collection",
+    "subtitle": "Bookmarked materials will appear here"
+  }
+}

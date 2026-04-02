@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "paths": {
+      "@studyhive/components": ["./packages/components/src"],
+      "@studyhive/store": ["./packages/store/src"],
+      "@studyhive/hooks": ["./packages/hooks/src"],
+      "@studyhive/database": ["./packages/database/src"],
+      "@studyhive/types": ["./packages/types/src"],
+      "@studyhive/utils": ["./packages/utils/src"],
+      "@studyhive/constants": ["./packages/constants/src"],
+      "@studyhive/ai": ["./packages/ai/src"]
+    }
+  }
+}

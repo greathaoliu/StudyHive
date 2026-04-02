@@ -1,0 +1,73 @@
+{
+  "app": {
+    "name": "StudyHive",
+    "version": "v0.1.0"
+  },
+  "sidebar": {
+    "search": "搜索课程或资料...",
+    "myMajors": "我的专业",
+    "discover": "发现",
+    "collection": "收藏",
+    "upload": "上传",
+    "settings": "设置",
+    "addMajor": "添加专业"
+  },
+  "materialList": {
+    "all": "全部",
+    "courseware": "课件",
+    "video": "视频",
+    "exam": "试题",
+    "notes": "笔记",
+    "link": "链接",
+    "crawl": "搜集",
+    "uploadSource": "上传"
+  },
+  "contentPanel": {
+    "selectMaterial": "选择一份资料开始阅读",
+    "autoCollect": "输入专业和课程名，自动搜集资料",
+    "uploadTip": "或上传你自己的学习资料",
+    "aiTip": "AI 自动分类和管理"
+  },
+  "discover": {
+    "title": "发现学习资料",
+    "subtitle": "输入专业和课程名，搜索全球高校的学习资料",
+    "majorPlaceholder": "专业 (如: 计算机科学)",
+    "coursePlaceholder": "课程名 (如: 数据结构)",
+    "search": "搜索"
+  },
+  "upload": {
+    "title": "上传资料",
+    "subtitle": "上传你的学习资料，AI 将自动分类和管理",
+    "dragHere": "拖拽文件到此处，或点击选择文件",
+    "supportedFormats": "支持 PDF、PPT、DOC、ZIP 等格式",
+    "selectFiles": "选择文件"
+  },
+  "settings": {
+    "title": "设置",
+    "general": "通用",
+    "ai": "AI 配置",
+    "language": "界面语言",
+    "theme": "主题",
+    "themeSystem": "跟随系统",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "autoUpdate": "启动时自动检查更新",
+    "aiProvider": "AI 提供商",
+    "aiProviderOpenai": "OpenAI 兼容",
+    "aiProviderClaude": "Claude",
+    "aiProviderCustom": "自定义",
+    "baseUrl": "Base URL",
+    "baseUrlPlaceholder": "https://api.openai.com/v1",
+    "baseUrlHint": "支持 OpenAI 兼容的 API 地址",
+    "apiKey": "API Key",
+    "apiKeyPlaceholder": "sk-...",
+    "model": "模型",
+    "modelPlaceholder": "gpt-4o-mini",
+    "save": "保存配置",
+    "testConnection": "测试连接"
+  },
+  "collection": {
+    "title": "我的收藏",
+    "subtitle": "收藏的学习资料会显示在这里"
+  }
+}
