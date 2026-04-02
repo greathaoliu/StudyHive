@@ -3,6 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "description": "A learning material collection app for university students",
+  "author": "皓同学开发",
+  "license": "MIT",
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",

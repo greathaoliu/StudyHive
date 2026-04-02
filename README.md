@@ -2,6 +2,8 @@
 
 AI-powered course material aggregator for university students. Automatically search, download, and manage learning resources across multiple platforms.
 
+**Created by 皓同学开发**
+
 ## Features
 
 - **Curriculum Parsing** - Upload your university curriculum PDF; AI extracts courses, knowledge points, and auto-generates aliases
@@ -61,4 +63,4 @@ packages/
 
 ## License
 
-MIT
+MIT License - see [LICENSE](LICENSE) for details.
