@@ -92,7 +92,7 @@ StudyHive文字的位置和 mac 的关闭窗口等按键重叠了，改一下
 ## 第三轮对话（上下文续接）
 
 ### 22
-base url https://open.bigmodel.cn/api/anthropic key是e8dab9ce3c0e49918c5f0fa1dae2e375.wsa039cEF9cLNZ9S 模型glm-5.1测试失败，帮我看看，在模型列表里多添加一些常用的国产模型和世界领先模型吧
+AI 模型配置测试失败，帮我看看，在模型列表里多添加一些常用的国产模型和世界领先模型吧
 
 ### 23
 你帮我填一下 base url 吧 zhipu 的
