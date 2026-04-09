@@ -14,7 +14,7 @@
     "@studyhive/types": "workspace:*",
     "i18next": "^25.8.6",
     "jotai": "^2.12.6",
-    "pdfjs-dist": "^5.6.205",
+    "pdfjs-dist": "5.4.296",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-i18next": "^15.5.3",

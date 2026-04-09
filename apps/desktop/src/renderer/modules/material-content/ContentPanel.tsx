@@ -1,10 +1,35 @@
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect, useMemo, Component, type ReactNode } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import "react-pdf/dist/Page/AnnotationLayer.css"
 import "react-pdf/dist/Page/TextLayer.css"
 import { useMaterialStore } from "../../store/material"
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url,
+).toString()
+
+/* ============ Error Boundary ============ */
+class PDFErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean; error: string }> {
+  state = { hasError: false, error: "" }
+  static getDerivedStateFromError(err: Error) {
+    return { hasError: true, error: err.message }
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="flex items-center justify-center py-20">
+          <div className="text-center">
+            <p className="text-sm text-error">PDF 渲染出错</p>
+            <p className="mt-1 text-xs text-base-content/40">{this.state.error}</p>
+            <button className="btn btn-ghost btn-xs mt-2" onClick={() => this.setState({ hasError: false, error: "" })}>重试</button>
+          </div>
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
 
 const typeIcons: Record<string, string> = {
   courseware: "📄",
@@ -22,14 +47,49 @@ const typeLabels: Record<string, string> = {
   link: "链接",
 }
 
-/* ============ PDF Viewer (从本地文件加载) ============ */
+/* ============ PDF Viewer (通过 IPC 读取本地文件) ============ */
 function PDFViewer({ filePath, title }: { filePath: string; title: string }) {
   const [numPages, setNumPages] = useState<number>(0)
   const [pageNumber, setPageNumber] = useState<number>(1)
   const [scale, setScale] = useState(1.2)
   const [error, setError] = useState<string | null>(null)
+  const [pdfData, setPdfData] = useState<{ data: Uint8Array } | null>(null)
+  const [loading, setLoading] = useState(true)
 
-  const pdfUrl = `local-pdf://${filePath}`
+  // Load PDF binary via IPC
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true)
+    setError(null)
+    setPdfData(null)
+    setPageNumber(1)
+    setNumPages(0)
+
+    window.api.readBinary(filePath).then((buffer) => {
+      if (cancelled) return
+      if (!buffer) {
+        setError("文件不存在或无法读取")
+        setLoading(false)
+        return
+      }
+      setPdfData({ data: new Uint8Array(buffer) })
+      setLoading(false)
+    }).catch((err: Error) => {
+      if (cancelled) return
+      console.error("readBinary error:", err)
+      setError(err.message)
+      setLoading(false)
+    })
+
+    return () => { cancelled = true }
+  }, [filePath])
+
+  // Stable options object — avoid re-creating on every render
+  const docOptions = useMemo(() => ({
+    cMapUrl: "https://unpkg.com/pdfjs-dist@5.4.296/cmaps/",
+    cMapPacked: true,
+    standardFontDataUrl: "https://unpkg.com/pdfjs-dist@5.4.296/standard_fonts/",
+  }), [])
 
   const onDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
     setNumPages(numPages)
@@ -37,6 +97,7 @@ function PDFViewer({ filePath, title }: { filePath: string; title: string }) {
   }, [])
 
   const onDocumentLoadError = useCallback((err: Error) => {
+    console.error("PDF load error:", err)
     setError(err.message)
   }, [])
 
@@ -59,22 +120,33 @@ function PDFViewer({ filePath, title }: { filePath: string; title: string }) {
         </div>
       </div>
       <div className="overflow-auto rounded-b-lg border border-base-300 bg-base-300/20" style={{ maxHeight: "calc(100vh - 400px)" }}>
-        {error ? (
+        {loading ? (
+          <div className="flex items-center justify-center py-20">
+            <span className="loading loading-spinner loading-md text-primary" />
+            <span className="ml-2 text-sm text-base-content/50">读取文件...</span>
+          </div>
+        ) : error ? (
           <div className="flex items-center justify-center py-20">
             <div className="text-center">
               <p className="text-sm text-error">PDF 加载失败</p>
               <p className="mt-1 text-xs text-base-content/40">{error}</p>
             </div>
           </div>
-        ) : (
+        ) : pdfData ? (
           <div className="flex justify-center py-4">
-            <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess} onLoadError={onDocumentLoadError}
-              loading={<div className="flex items-center justify-center py-20"><span className="loading loading-spinner loading-md text-primary" /><span className="ml-2 text-sm text-base-content/50">加载 PDF...</span></div>}
-            >
-              <Page pageNumber={pageNumber} scale={scale} renderTextLayer={true} renderAnnotationLayer={true} />
-            </Document>
+            <PDFErrorBoundary>
+              <Document
+                file={pdfData}
+                onLoadSuccess={onDocumentLoadSuccess}
+                onLoadError={onDocumentLoadError}
+                options={docOptions}
+                loading={<div className="flex items-center justify-center py-20"><span className="loading loading-spinner loading-md text-primary" /><span className="ml-2 text-sm text-base-content/50">解析 PDF...</span></div>}
+              >
+                <Page pageNumber={pageNumber} scale={scale} renderTextLayer={true} renderAnnotationLayer={true} />
+              </Document>
+            </PDFErrorBoundary>
           </div>
-        )}
+        ) : null}
       </div>
     </div>
   )

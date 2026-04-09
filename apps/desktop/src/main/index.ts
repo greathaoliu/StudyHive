@@ -1,5 +1,6 @@
 import { app, BrowserWindow, shell, ipcMain, dialog, protocol, net } from "electron"
 import { join } from "path"
+import { pathToFileURL } from "url"
 import { electronApp, optimizer, is } from "@electron-toolkit/utils"
 import { mkdirSync, existsSync, createWriteStream, readdirSync, statSync, writeFileSync, readFileSync } from "fs"
 import { pipeline } from "stream/promises"
@@ -258,6 +259,12 @@ ipcMain.handle("file:getStats", async () => {
   }
 
   return { fileCount, totalSize, storageRoot: STORAGE_ROOT }
+})
+
+// 读取本地文件为 ArrayBuffer（供渲染进程加载 PDF）
+ipcMain.handle("file:readBinary", async (_event, filePath: string) => {
+  if (!existsSync(filePath)) return null
+  return readFileSync(filePath)
 })
 
 // 在系统文件管理器中打开
@@ -1182,7 +1189,7 @@ ipcMain.handle("programs:load", async () => {
 protocol.registerSchemesAsPrivileged([
   {
     scheme: "local-pdf",
-    privileges: { standard: false, secure: true, supportFetchAPI: true, stream: true, corsEnabled: false },
+    privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true, corsEnabled: true },
   },
 ])
 
@@ -1191,10 +1198,26 @@ app.whenReady().then(() => {
 
   // local-pdf:// 协议：让渲染进程通过 URL 读取本地 PDF 文件
   protocol.handle("local-pdf", (request) => {
-    const filePath = decodeURIComponent(new URL(request.url).pathname)
-    if (existsSync(filePath)) {
-      return net.fetch(`file://${filePath}`)
+    // URL format: local-pdf://host/<encodedPath>
+    // standard: true means Chromium parses it like http, so we get a proper URL with host
+    let filePath: string
+    try {
+      const url = new URL(request.url)
+      // The path is everything after the host, URL-decoded
+      filePath = decodeURIComponent(url.pathname)
+      // On Windows the pathname may start with /C:, keep as-is on macOS (/Users/...)
+    } catch {
+      // Fallback: strip scheme manually
+      const raw = request.url.replace(/^local-pdf:\/\//, "")
+      filePath = decodeURIComponent(raw)
     }
+
+    console.log("[local-pdf] request:", request.url, "-> filePath:", filePath)
+
+    if (existsSync(filePath)) {
+      return net.fetch(pathToFileURL(filePath).href)
+    }
+    console.error("[local-pdf] file not found:", filePath)
     return new Response("Not found", { status: 404 })
   })
 

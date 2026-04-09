@@ -25,6 +25,8 @@ const api = {
 
   showInFolder: (filePath: string) => ipcRenderer.invoke("file:showInFolder", filePath),
 
+  readBinary: (filePath: string): Promise<ArrayBuffer | null> => ipcRenderer.invoke("file:readBinary", filePath),
+
   // 文件选择
   selectFiles: () => ipcRenderer.invoke("dialog:selectFiles"),
 
